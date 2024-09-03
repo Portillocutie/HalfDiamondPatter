@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class HalfDiamondPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);  
+        System.out.print("Enter any number: ");
+        sc.nextInt();  // Accept input from the user (input value isn't actually used)
+
+        int n = 5;  // Set the size of the half-diamond pattern
+
+        // Print the single asterisk at the top
+        System.out.println("*");
+
+        // Generate the upper half of the diamond, including the middle row
+        for (int i = 1; i <= n; i++) {
+            System.out.print("*");  // Print leading asterisk
+            
+            // Print ascending sequence of numbers from 1 to i
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            
+            // Print descending sequence of numbers from i-1 down to 1
+            for (int j = i - 1; j >= 1; j--) {
+                System.out.print(j);
+            }
+
+            System.out.println("*");  // Print trailing asterisk and move to next line
+        }
+
+        // Generate the lower half of the diamond, excluding the middle row
+        for (int i = n - 1; i >= 1; i--) {
+            System.out.print("*");  // Print leading asterisk
+            
+            // Print ascending sequence of numbers from 1 to i
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            
+            // Print descending sequence of numbers from i-1 down to 1
+            for (int j = i - 1; j >= 1; j--) {
+                System.out.print(j);
+            }
+
+            System.out.println("*");  // Print trailing asterisk and move to next line
+        }
+
+        // Print the single asterisk at the bottom
+        System.out.println("*");
+
+        sc.close();  // Close the scanner
+    }
+}
